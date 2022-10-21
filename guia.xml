@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<factura id="comprobante" version="1.0.0">
+    <infoTributaria>
+        <ambiente>2</ambiente>
+        <tipoEmision>1</tipoEmision>
+        <razonSocial>MOMPO TRAVEL CIA LTDA.</razonSocial>
+        <nombreComercial>MOMPO TRAVEL</nombreComercial>
+        <ruc>0190169952001</ruc>
+        <claveAcceso>1710202201019016995200120010020000251380002513812</claveAcceso>
+        <codDoc>01</codDoc>
+        <estab>001</estab>
+        <ptoEmi>002</ptoEmi>
+        <secuencial>000025138</secuencial>
+        <dirMatriz>AURELIO AGUILAR 1-59 Y AV. SOLANO</dirMatriz>
+        <agenteRetencion>1</agenteRetencion>
+    </infoTributaria>
+    <infoFactura>
+        <fechaEmision>17/10/2022</fechaEmision>
+        <dirEstablecimiento>AV. AMAZONAS N3144 Y AV. ELOY ALFARO</dirEstablecimiento>
+        <obligadoContabilidad>SI</obligadoContabilidad>
+        <tipoIdentificacionComprador>04</tipoIdentificacionComprador>
+        <razonSocialComprador>TERRASKYTRAVEL CIA LTDA</razonSocialComprador>
+        <identificacionComprador>0190487407001</identificacionComprador>
+        <direccionComprador>LUIS CORDERO 12-96 ANTONIO VEGA MUNOZ</direccionComprador>
+        <totalSinImpuestos>50.63</totalSinImpuestos>
+        <totalDescuento>0.00</totalDescuento>
+        <totalConImpuestos>
+            <totalImpuesto>
+                <codigo>2</codigo>
+                <codigoPorcentaje>2</codigoPorcentaje>
+                <baseImponible>50.63</baseImponible>
+                <valor>6.08</valor>
+            </totalImpuesto>
+        </totalConImpuestos>
+        <propina>0.00</propina>
+        <importeTotal>56.71</importeTotal>
+        <moneda>DOLAR</moneda>
+        <pagos>
+            <pago>
+                <formaPago>20</formaPago>
+                <total>56.71</total>
+                <plazo>0</plazo>
+                <unidadTiempo>dias</unidadTiempo>
+            </pago>
+        </pagos>
+    </infoFactura>
+    <detalles>
+        <detalle>
+            <codigoPrincipal>45</codigoPrincipal>
+            <codigoAuxiliar>2401786696</codigoAuxiliar>
+            <descripcion>BASE IVA DE SERVICIOS SILVERIO FLORESTINO HURTADO TOCACHE 2K-2401786696 GYE-MGA-GYE
+            </descripcion>
+            <cantidad>1.00</cantidad>
+            <precioUnitario>50.63</precioUnitario>
+            <descuento>0.00</descuento>
+            <precioTotalSinImpuesto>50.63</precioTotalSinImpuesto>
+            <detallesAdicionales>
+                <detAdicional nombre="ref1" valor="Pasajero: SILVERIO FLORESTINO HURTADO TOCACHE Ruta: GYE-MGA-GYE" />
+            </detallesAdicionales>
+            <impuestos>
+                <impuesto>
+                    <codigo>2</codigo>
+                    <codigoPorcentaje>2</codigoPorcentaje>
+                    <tarifa>12</tarifa>
+                    <baseImponible>50.63</baseImponible>
+                    <valor>6.08</valor>
+                </impuesto>
+            </impuestos>
+        </detalle>
+    </detalles>
+    <infoAdicional>
+        <campoAdicional nombre="Direccion">LUIS CORDERO 12-96 ANTONIO VEGA MUNOZ</campoAdicional>
+        <campoAdicional nombre="Telefono">0984047079</campoAdicional>
+        <campoAdicional nombre="Email">terraskytravel@gmail.com</campoAdicional>
+    </infoAdicional>
+    <ds:Signature xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:etsi="http://uri.etsi.org/01903/v1.3.2#"
+        Id="Signature471623">
+        <ds:SignedInfo Id="Signature-SignedInfo593922">
+            <ds:CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+            <ds:SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" />
+            <ds:Reference Id="SignedPropertiesID391709" Type="http://uri.etsi.org/01903#SignedProperties"
+                URI="#Signature471623-SignedProperties547595">
+                <ds:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+                <ds:DigestValue>nerbiCEmvudPqu3SeK/rLKUl5Mk=</ds:DigestValue>
+            </ds:Reference>
+            <ds:Reference URI="#Certificate1509700">
+                <ds:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+                <ds:DigestValue>3Ruam6JWlLHbz2/QuYG+bfcoUyA=</ds:DigestValue>
+            </ds:Reference>
+            <ds:Reference Id="Reference-ID-791384" URI="#comprobante">
+                <ds:Transforms>
+                    <ds:Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" />
+                </ds:Transforms>
+                <ds:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+                <ds:DigestValue>MFA4/o+SjBpBgQtX/577y56Xl/w=</ds:DigestValue>
+            </ds:Reference>
+        </ds:SignedInfo>
+        <ds:SignatureValue Id="SignatureValue726113">
+            Mi/jZK6pV/2qB3eqkAL+FFwOghwp9Mi/K5CXbYJ2RiTQQXNIUuV3NSAgY5begbBywjVqi0g8TUii
+            e1vkejBQcsmtmL5jo4xV02ydioHVPvtjcXTaJSO/Eq8ppJR3y+iOLvQ0tcrPtEVTpUTsYirP/3SR
+            GcEibS8CBSq/u5fgYul+XZwxEMYBfSPTEUZ3VVeEyqaFc//aKQbmjai1ycoxU1v8cBpNyMiGSov4
+            556uDvqmwxIkpntIx4V3zP4vA9mguGJpoQILudIHSeGCX6R0a4yY0jwIAyhc3G+OGxD5MckiTOfY
+            Bb+FtZiUlard3fuBBWzp42TkzOFU+RrMbD4nsA==
+        </ds:SignatureValue>
+        <ds:KeyInfo Id="Certificate1509700">
+            <ds:X509Data>
+                <ds:X509Certificate>
+                    MIIMCTCCCfGgAwIBAgIER+1svjANBgkqhkiG9w0BAQsFADCBmTELMAkGA1UEBhMCRUMxHTAbBgNV
+                    BAoMFFNFQ1VSSVRZIERBVEEgUy5BLiAyMTAwLgYDVQQLDCdFTlRJREFEIERFIENFUlRJRklDQUNJ
+                    T04gREUgSU5GT1JNQUNJT04xOTA3BgNVBAMMMEFVVE9SSURBRCBERSBDRVJUSUZJQ0FDSU9OIFNV
+                    QkNBLTIgU0VDVVJJVFkgREFUQTAeFw0yMTEyMTcxNDM1NTlaFw0yNTEyMTcxNDM1NTlaMIGfMSgw
+                    JgYDVQQDDB9TSUxWSUEgTUFSTEVORSBQQVJSQSBCRVJSRVpVRVRBMRUwEwYDVQQFEwwxNzEyMjEw
+                    OTQ1NDUxMDAuBgNVBAsMJ0VOVElEQUQgREUgQ0VSVElGSUNBQ0lPTiBERSBJTkZPUk1BQ0lPTjEd
+                    MBsGA1UECgwUU0VDVVJJVFkgREFUQSBTLkEuIDIxCzAJBgNVBAYTAkVDMIIBIjANBgkqhkiG9w0B
+                    AQEFAAOCAQ8AMIIBCgKCAQEA7Su6AsBiIpGp2HwZYyVVcACJ8DQlfeJYlhCRtb5KV6Ivo6FRNONY
+                    OW2AFer77JBO2azQAjEpQ88ze8nYmeAK1gj30sKVdPYrB9IhtsufPIgDcjuNYCfyhY8me4S2SqyB
+                    5GyLyKOscRlhWLbIvV93G68Cbzq+PdD625bY2qGpBWXm46pPOCb6ElXoZu07FKq78UepMJen2F+a
+                    tKsZBalt5HWlMaYetEBCw+cIllKQRnc2CrFJuXtogRrnYK5pIIzFNvvPkufQNAT7b2IVRn4E8Lvy
+                    ZoSV3SbLPIlsUIDdcTFfZAQy6Qq3OI/tX16JEKJX7sEP/NwYcfITMcdqmuxTzQIDAQABo4IHTzCC
+                    B0swDAYDVR0TAQH/BAIwADAfBgNVHSMEGDAWgBSMusoRV3glgB1rCktVv42uYt29jzBZBggrBgEF
+                    BQcBAQRNMEswSQYIKwYBBQUHMAGGPWh0dHA6Ly9vY3NwZ3cuc2VjdXJpdHlkYXRhLm5ldC5lYy9l
+                    amJjYS9wdWJsaWN3ZWIvc3RhdHVzL29jc3Awgc8GA1UdLgSBxzCBxDCBwaCBvqCBu4aBuGxkYXA6
+                    Ly9sZGFwc2RjYTIuc2VjdXJpdHlkYXRhLm5ldC5lYy9DTj1BVVRPUklEQUQgREUgQ0VSVElGSUNB
+                    Q0lPTiBTVUJDQS0yIFNFQ1VSSVRZIERBVEEsT1U9RU5USURBRCBERSBDRVJUSUZJQ0FDSU9OIERF
+                    IElORk9STUFDSU9OLE89U0VDVVJJVFkgREFUQSBTLkEuIDIsQz1FQz9kZWx0YVJldm9jYXRpb25M
+                    aXN0P2Jhc2UwIgYDVR0RBBswGYEXbW9tcG90cmF2ZWxAaG90bWFpbC5jb20wggEVBgNVHSAEggEM
+                    MIIBCDBiBgorBgEEAYKmcgIJMFQwUgYIKwYBBQUHAgIwRh5EAEMAZQByAHQAaQBmAGkAYwBhAGQA
+                    bwAgAGQAZQAgAFIAZQBwAHIAZQBzAGUAbgB0AGEAbgB0AGUAIABMAGUAZwBhAGwwgaEGCisGAQQB
+                    gqZyAgMwgZIwgY8GCCsGAQUFBwIBFoGCaHR0cHM6Ly93d3cuc2VjdXJpdHlkYXRhLm5ldC5lYy93
+                    cC1jb250ZW50L2Rvd25sb2Fkcy9Ob3JtYXRpdmFzL1BfZGVfQ2VydGlmaWNhZG9zL1BvbGl0aWNh
+                    cyBkZSBDZXJ0aWZpY2FkbyBSZXByZXNlbnRhbnRlIExlZ2FsLnBkZjCCAqIGA1UdHwSCApkwggKV
+                    MIHloEGgP4Y9aHR0cDovL29jc3Bndy5zZWN1cml0eWRhdGEubmV0LmVjL2VqYmNhL3B1YmxpY3dl
+                    Yi9zdGF0dXMvb2NzcKKBn6SBnDCBmTE5MDcGA1UEAwwwQVVUT1JJREFEIERFIENFUlRJRklDQUNJ
+                    T04gU1VCQ0EtMiBTRUNVUklUWSBEQVRBMTAwLgYDVQQLDCdFTlRJREFEIERFIENFUlRJRklDQUNJ
+                    T04gREUgSU5GT1JNQUNJT04xHTAbBgNVBAoMFFNFQ1VSSVRZIERBVEEgUy5BLiAyMQswCQYDVQQG
+                    EwJFQzCBx6CBxKCBwYaBvmxkYXA6Ly9sZGFwc2RjYTIuc2VjdXJpdHlkYXRhLm5ldC5lYy9DTj1B
+                    VVRPUklEQUQgREUgQ0VSVElGSUNBQ0lPTiBTVUJDQS0yIFNFQ1VSSVRZIERBVEEsT1U9RU5USURB
+                    RCBERSBDRVJUSUZJQ0FDSU9OIERFIElORk9STUFDSU9OLE89U0VDVVJJVFkgREFUQSBTLkEuIDIs
+                    Qz1FQz9jZXJ0aWZpY2F0ZVJldm9jYXRpb25MaXN0P2Jhc2UwgeCggd2ggdqGgddodHRwczovL3Bv
+                    cnRhbC1vcGVyYWRvcjIuc2VjdXJpdHlkYXRhLm5ldC5lYy9lamJjYS9wdWJsaWN3ZWIvd2ViZGlz
+                    dC9jZXJ0ZGlzdD9jbWQ9Y3JsJmlzc3Vlcj1DTj1BVVRPUklEQUQgREUgQ0VSVElGSUNBQ0lPTiBT
+                    VUJDQS0yIFNFQ1VSSVRZIERBVEEsT1U9RU5USURBRCBERSBDRVJUSUZJQ0FDSU9OIERFIElORk9S
+                    TUFDSU9OLE89U0VDVVJJVFkgREFUQSBTLkEuIDIsQz1FQzAdBgNVHQ4EFgQUCPZo3SK7UTwtMTzm
+                    cKPdHNkaCTAwKwYDVR0QBCQwIoAPMjAyMTEyMTcxNDM1NTlagQ8yMDI1MTIxNzE0MzU1OVowCwYD
+                    VR0PBAQDAgXgMB8GCisGAQQBgqZyAwUEEQwPR0VSRU5URSBHRU5FUkFMMBoGCisGAQQBgqZyAwEE
+                    DAwKMDEwMzcyMjQxOTAWBgorBgEEAYKmcgMJBAgMBkNVRU5DQTARBgorBgEEAYKmcgMiBAMMAS4w
+                    MAYKKwYBBAGCpnIDBwQiDCBBVVJFTElPIEFHVUlMQVIgMS01OSBZIEFWIFNPTEFOTzAeBgorBgEE
+                    AYKmcgMCBBAMDlNJTFZJQSBNQVJMRU5FMB8GCisGAQQBgqZyAyAEEQwPMDA1MDAxMDAwMDEzNjIy
+                    MBMGCisGAQQBgqZyAyEEBQwDUEZYMBcGCisGAQQBgqZyAwwECQwHRUNVQURPUjAVBgorBgEEAYKm
+                    cgMDBAcMBVBBUlJBMCYGCisGAQQBgqZyAwoEGAwWTU9NUE8gVFJBVkVMIENJQSBMVERBLjAdBgor
+                    BgEEAYKmcgMLBA8MDTAxOTAxNjk5NTIwMDEwEgYKKwYBBAGCpnIDHQQEDAJObzAaBgorBgEEAYKm
+                    cgMEBAwMCkJFUlJFWlVFVEEwGgYKKwYBBAGCpnIDCAQMDAowOTk3MTgwODQ2MA0GCSqGSIb3DQEB
+                    CwUAA4ICAQBrI0KUy3XxwEn46XXY3KhhVEK0i1+I21EEr5dnGvJSDdhf0/QJhjMsDBWIpnfRc/gS
+                    Sxsk4c6gUfRTK5U4PMGADb+SzqQuluV08WZs4hun4Db1rXtgzEosg5iBUEbI9Mdk36qCm/bG58V7
+                    8j/yDT0JCViaBhGB4HTlUNl8rCkWom6mrYdcgYz3pugrvzbmMXieLwqKzHmksMFvtmWPUuADO9dz
+                    g5jU4602Cf7SDTZFltkl+oVBbglkbhMXmfMYbIWdxgJJgUxypXtkuis9KjbQ9GQzbeKIZdHPuBpo
+                    XCRaxAs8HygKb91ixAVZi4DkDXpQIL7zEd7TuvM/HrhlwPcM9fa80N7nAwhFL6KgEj5vOViTSfA3
+                    pYQyDV8O8mo6NfuHucYZ0ZIQeu1GLFBP9NfwTwLqd4O89Wzds5oNcQKbPWbmh29nmZcbNH95GHc2
+                    aB8KmllZUwBeyR9Fm579xkz1risQXUeBV0Zd1klwXF/e43TfNvjCK3ss6EI37YGCDkhzQlTILRr3
+                    5Dldx/fYXmhg4sNhwhmnw9moPmjL0zaeUB/Syx8VK6jOF7JtWU6JxivBKClPWO5znaEnq/fQXVYU
+                    rSN1WDUjgOd7MHP0DaO5L5vXeOUDNgsKjEVaHMFGPbRG1oWHlsdE0ehvfMQ4bC2m1U3dgw254cJu
+                    WHLJ7yMzww==
+                </ds:X509Certificate>
+            </ds:X509Data>
+            <ds:KeyValue>
+                <ds:RSAKeyValue>
+                    <ds:Modulus>
+                        7Su6AsBiIpGp2HwZYyVVcACJ8DQlfeJYlhCRtb5KV6Ivo6FRNONYOW2AFer77JBO2azQAjEpQ88z
+                        e8nYmeAK1gj30sKVdPYrB9IhtsufPIgDcjuNYCfyhY8me4S2SqyB5GyLyKOscRlhWLbIvV93G68C
+                        bzq+PdD625bY2qGpBWXm46pPOCb6ElXoZu07FKq78UepMJen2F+atKsZBalt5HWlMaYetEBCw+cI
+                        llKQRnc2CrFJuXtogRrnYK5pIIzFNvvPkufQNAT7b2IVRn4E8LvyZoSV3SbLPIlsUIDdcTFfZAQy
+                        6Qq3OI/tX16JEKJX7sEP/NwYcfITMcdqmuxTzQ==
+                    </ds:Modulus>
+                    <ds:Exponent>AQAB</ds:Exponent>
+                </ds:RSAKeyValue>
+            </ds:KeyValue>
+        </ds:KeyInfo>
+        <ds:Object Id="Signature471623-Object372834">
+            <etsi:QualifyingProperties Target="#Signature471623">
+                <etsi:SignedProperties Id="Signature471623-SignedProperties547595">
+                    <etsi:SignedSignatureProperties>
+                        <etsi:SigningTime>2022-10-17T16:44:37-05:00</etsi:SigningTime>
+                        <etsi:SigningCertificate>
+                            <etsi:Cert>
+                                <etsi:CertDigest>
+                                    <ds:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+                                    <ds:DigestValue>KsFAB/8HSZdklBUs4MmzBKFIXYs=</ds:DigestValue>
+                                </etsi:CertDigest>
+                                <etsi:IssuerSerial>
+                                    <ds:X509IssuerName>CN=AUTORIDAD DE CERTIFICACION SUBCA-2 SECURITY DATA,OU=ENTIDAD DE
+                                        CERTIFICACION DE INFORMACION,O=SECURITY DATA S.A. 2,C=EC</ds:X509IssuerName>
+                                    <ds:X509SerialNumber>1206742206</ds:X509SerialNumber>
+                                </etsi:IssuerSerial>
+                            </etsi:Cert>
+                        </etsi:SigningCertificate>
+                    </etsi:SignedSignatureProperties>
+                    <etsi:SignedDataObjectProperties>
+                        <etsi:DataObjectFormat ObjectReference="#Reference-ID-791384">
+                            <etsi:Description>contenido comprobante</etsi:Description>
+                            <etsi:MimeType>text/xml</etsi:MimeType>
+                        </etsi:DataObjectFormat>
+                    </etsi:SignedDataObjectProperties>
+                </etsi:SignedProperties>
+            </etsi:QualifyingProperties>
+        </ds:Object>
+    </ds:Signature>
+</factura>

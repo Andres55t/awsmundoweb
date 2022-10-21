@@ -1,0 +1,46 @@
+<h4>Registro de Sucursales</h4>
+<div class="row">
+    <div class="col-md-6">
+        <form action="/store-sucursal" method="post">
+
+            <div class="my-3">
+                <label for="nombre_sucursales">Nombre Sucursal</label>
+                <input class="form-control" name="nombre_sucursales" type="text" placeholder="Nombre Sucursal"
+                    autofocus>
+            </div>
+            <div class="my-3">
+                <label for="direccion_sucursales">Direccion</label>
+                <input class="form-control" name="direccion_sucursales" type="text" placeholder="Direccion">
+            </div>
+            <div class="my-3">
+                <label for="codigoestablecimiento_sucursales">Codigo de establecimiento</label>
+                <input class="form-control" name="codigoestablecimiento_sucursales" type="text" placeholder="Codigo de establecimiento">
+            </div>
+           
+            <div class="text-end">
+                <button class="btn btn-primary">Ingresar</button>
+            </div>
+
+        </form>
+    </div>
+
+
+    <div class="col-md-6">
+        <div class="table-responsive">
+            <table class="table table-stripe table-hover">
+                <thead>
+                    <th>Nombre</th>
+                    <th>Direccion</th>
+                    <th>Codigo Establecimiento</th>
+                </thead>
+                {{#each sucursal}}
+                <tr>
+                    <td>{{this.nombre_sucursales}}</td>
+                    <td>{{this.direccion_sucursales}}</td>
+                    <td>{{this.codigoestablecimiento_sucursales}}</td>
+                </tr>
+                {{/each }}
+            </table>
+        </div>
+    </div>
+</div>

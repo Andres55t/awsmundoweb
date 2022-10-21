@@ -1,0 +1,62 @@
+<form action="/store-firmardoc" method="post">
+    <div class="col-md-6">
+        <div class="table-responsive">
+            <table class="table table-stripe table-hover">
+                <thead>
+                    <th>Firma</th>
+
+                </thead>
+                {{#each firmas}}
+                <tr>
+                    <td><input class="" id="tarifaimponible_total" name="firmafirmar" type="text"
+                            value="{{this.archivo}}" readonly="readonly">
+                    </td>
+
+                </tr>
+                {{/each }}
+            </table>
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="table-responsive">
+            <table class="table table-stripe table-hover">
+                <thead>
+                    <th>Generados</th>
+
+                </thead>
+                {{#each generados}}
+                <tr>
+                    <td>{{this.archivo}}</td>
+
+                </tr>
+                {{/each }}
+            </table>
+        </div>
+    </div>
+
+    <label for="factura_firmar">Factura a Firmar</label>
+    <input class="" id="factura_firmar" name="factura_firmar" type="text">
+    <label for="factura_firmar">Contraseña Firma</label>
+    <input class="" id="password_firma" name="password_firma" type="password">
+    <div class="text-end">`
+        <button class="btn btn-primary">Ingresar</button>
+    </div>
+</form>
+
+    <div class="col-md-6">
+        <div class="table-responsive">
+            <table class="table table-stripe table-hover">
+                <thead>
+                    <th>Firmados</th>
+
+                </thead>
+                {{#each firmados}}
+                <tr>
+                    <td>{{this.archivo}}</td>
+
+                </tr>
+                {{/each }}
+            </table>
+        </div>
+    </div>

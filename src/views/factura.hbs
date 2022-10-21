@@ -1,0 +1,356 @@
+<h4 id="crear" value="s">Crear Factura</h4>
+<div>
+    <form action="/generarfactura" method="post">
+        <div class="row">
+            <div class="col-md-6">
+                {{!-- form --}}
+
+                <div class="my-3-p-7">
+                    <label for="codigo_principals">RazonSocial: </label>
+                    <input type="text" id="razonsocial" name="razonsocial" value="{{usuario.razonSocial}}"
+                        readonly="readonly">
+                </div>
+                <div class="my-3-p-7">
+                    <label for="codigo_principals">Nombre Comercial: </label>
+                    <input type="text" id="nom_comercial" name="nom_comercial" value="{{usuario.nombreComercial}}"
+                        readonly="readonly">
+                </div>
+                <div class="my-3-p-7">
+                    <label for="codigo_principals">Direccion Matriz: </label>
+                    <input type="text" id="dirMatriz" name="dirMatriz" value="{{usuario.dirMatriz}}"
+                        readonly="readonly">
+                </div>
+                <div class="my-3-p-7">
+                    <label for="codigo_principals">Obligado a Levar Contabilidad: </label>
+                    <input type="text" id="obligadocontabilidad" name="obligadocontabilidad"
+                        value="{{usuario.obligadocontabilidad}}" readonly="readonly">
+                </div>
+                {{#if usuario.agenteretencion_users}}
+                <div class="my-3-p-7">
+                    <label for="codigo_principals"> Agente de Retención: </label>
+                    <input type="text" id="fac_agenterete" name="fac_agenterete"
+                        value="{{usuario.agenteretencion_users}}" readonly="readonly">
+                </div>
+                {{/if}}
+                {{#if usuario.microempresas_users}}
+                <div class="my-3-p-7">
+                    <label for="codigo_principals">Contribuyente designado Microempresa: </label>
+                    <input type="text" id="fac_contrmicroempresa" name="fac_contrmicroempresa"
+                        value="{{usuario.microempresas_users}}" readonly="readonly">
+                </div>
+                {{/if}}
+                <div class="my-4-p-3">
+                    <label for="codigo_principals">RUC:</label>
+                    <input type="text" id="RUCNumber" name="RUCNumber" value="{{claveacc.RUCNumber}}" readonly="readonly">
+                </div>
+                <div class="my-3-p-7">
+                    <label for="codigo_principals">Access Key:</label>
+                    <input type="text" id="AccessKey" name="AccessKey" value="{{claveacc.AccessKey}}" readonly="readonly">
+                </div>
+                <div class="my-3-p-7">
+                    <label for="codigo_principals">Fecha:</label>
+                    <input type="date" id="issuedAt" name="issuedAt" value="{{claveacc.issuedAt}}" min="2018-01-01"
+                        max="2050-12-31">
+                </div>
+                <div class="my-3-p-7">
+                    <label for="codigo_principals">voucherType: </label>
+                    <input type="text" id="voucherType" name="voucherType" value="{{claveacc.voucherType}}"
+                        readonly="readonly">
+                </div>
+                <div class="my-3-p-7">
+                    <div class="form-floating">
+                        <select class="form-select" id="environmentType" name="environmentType"
+                            aria-label="Floating label select example">
+                            <option value="1" selected>pruebas</option>
+                            <option value="2">Producccion</option>
+                        </select>
+                        <label for="floatingSelect">Ambiente:</label>
+                    </div>
+                </div>
+                <div class="my-3-p-7">
+                    <label for="codigo_principals">Estableciemiento: </label>
+                    <input type="text" id="range" name="range" value="{{claveacc.range}}">
+                </div>
+
+                <div class="my-3-p-7">
+                    <label for="codigo_principals">Punto de emision: </label>
+                    <input type="text" id="pemi" name="pemi" value="{{claveacc.pemi}}">
+                </div>
+                <div class="my-3-p-7">
+                    <div class="form-floating">
+                        <select class="form-select" id="sucursal_factura" name="sucursal_factura"
+                            aria-label="Floating label select example">
+                            {{#each sucursal}}
+                            <option value="{{this.direccion_sucursales}}">
+                                {{this.nombre_sucursales}}-{{this.direccion_sucursales}}-{{this.codigoestablecimiento_sucursales}}
+                            </option>
+                            {{/each }}
+                        </select>
+                        <label for="floatingSelect">Sucursal:</label>
+                    </div>
+                </div>
+                <div class="my-3-p-7">
+                    <label for="codigo_principals">Numero de factura: </label>
+                    <input type="text" id="voucherNumber" name="voucherNumber" value="{{claveacc.voucherNumber}}">
+                </div>
+                <div class="my-3-p-7">
+                    <label for="codigo_principals">Codigo Numerico: </label>
+                    <input type="text" id="numericalCode" name="numericalCode" value="{{claveacc.numericalCode}}"
+                        readonly="readonly">
+                </div>
+                <div class="my-3-p-7">
+                    <label for="codigo_principals">Tipo de emision: </label>
+                    <input type="text" id="emissionType" name="emissionType" value="{{claveacc.emissionType}}"
+                        readonly="readonly">
+                </div>
+                {{!--desplegable --}}
+
+
+                {{!-- --}}
+                <div class="panel">
+                    <details>
+                        <summary>
+                            <ul>
+                                <li class="titleName">Datos del cliente</li>
+                            </ul>
+                        </summary>
+                        <div class="content" id="output_field">
+                            {{!-- --}}
+
+                            <div class="my-3-p-7">
+                                <input type="search" id="buscarclient" class="form-control" placeholder="Buscar cliente"
+                                    aria-label="Search" autofocus />
+                                <ul id="listabusq">
+
+                                </ul>
+                            </div>
+                            <div class="my-3">
+                                <label for="codigo_principals">Nombres del Cliente</label>
+                                <input class="form-control" id="nombresrs_cliente" name="nombresrs_cliente" type="text"
+                                    placeholder="Codigo Principal">
+                            </div>
+                            <div class="my-3-p-7">
+                                <div class="form-floating">
+                                    <select class="form-select" id="tipo_cliente" name="tipo_cliente"
+                                        aria-label="Floating label select example">
+                                        <option value="1" selected>Cliente</option>
+                                        <option value="2">Sugeto Retenido</option>
+                                        <option value="2">Destinatario</option>
+                                    </select>
+                                    <label for="floatingSelect">Tipo Cliente</label>
+                                </div>
+                            </div>
+                            <div class="my-3-p-7">
+                                <div class="form-floating">
+                                    <select class="form-select" id="tipoidentificacion_cliente"
+                                        name="tipoidentificacion_cliente" aria-label="Floating label select example">
+                                        <option value="05" selected>Cedula</option>
+                                        <option value="04">Ruc</option>
+                                        <option value="06">Pasaporte</option>
+                                        <option value="08">Identificacion del Exterior</option>
+                                    </select>
+                                    <label for="floatingSelect">Tipo de Identificacion</label>
+                                </div>
+                            </div>
+                            <div class="my-3">
+                                <label for="identificacion_cliente">Identificacion</label>
+                                <input class="form-control" id="identificacion_cliente" name="identificacion_cliente"
+                                    type="text" placeholder="Descripcion">
+                            </div>
+                            <div class="my-3">
+                                <label for="direccion_cliente">Direcion</label>
+                                <input class="form-control" id="direccion_cliente" name="direccion_cliente" type="text"
+                                    placeholder="Precio Unitario">
+                            </div>
+                            <div class="my-3">
+                                <label for="correo_cliente">Correo Electronico</label>
+                                <input class="form-control" id="correo_cliente" name="correo_cliente" type="text"
+                                    placeholder="Precio Unitario">
+                            </div>
+                            <div class="my-3">
+                                <label for="telefono_cliente">Telefono</label>
+                                <input class="form-control" id="telefono_cliente" name="telefono_cliente" type="text"
+                                    placeholder="Precio Unitario">
+                            </div>
+
+                            {{!-- --}}
+
+                        </div>
+                    </details>
+                </div>
+                {{!--fin del desplegable --}}
+
+                {{!-- boton--}}
+
+                {{!-- form --}}
+
+
+            </div>
+            <div class="col-md-6">
+                <label for="">Productos</label>
+                <div class="my-3-p-7">
+                    <input type="search" id="buscarpro" class="form-control" placeholder="Buscar Producto"
+                        aria-label="Search" />
+                    <ul id="listabusq">
+
+                    </ul>
+                </div>
+                <div class="table-responsive">
+
+                    <table id="tablapro" name="tablapro" class="table table-stripe table-hover pe-auto">
+                        <thead>
+                            <th>Codigo Principal</th>
+                            <th>Codigo Auxiliar</th>
+                            <th>Detalle</th>
+                            <th>Precio Unitario</th>
+                            <th>Codigo de Impuesto</th>
+                            <th>Codigo de porcentaje</th>
+                            <th>Detalle Adicional Valor</th>
+                            <th>Detalle Adicional Nombre</th>
+                        </thead>
+                        {{#each producto}}
+                        <tr>
+                            <td>{{this.codigo_principal}}</td>
+                            <td>{{this.codigo_auxiliar}}</td>
+                            <td>{{this.descripcion}}</td>
+                            <td>{{this.precio_unitario}}</td>
+                            <td>{{this.codigo_impuesto}}</td>
+                            <td>{{this.codigo_porcentaje}}</td>
+                            <td>{{this.detalleadicional_valor}}</td>
+                            <td>{{this.detalleadicional_nombre}}</td>
+                        </tr>
+                        {{/each }}
+                    </table>
+
+                </div>
+                {{!--
+            </div> --}}
+        </div>
+        <div class="table-responsive">
+            <label for="tablafact">Detalle</label>
+            <table id="tablafact" class="table table-stripe table-hover pe-auto ">
+                <thead>
+                    <th>Codigo Principal</th>
+                    <th>Codigo Auxiliar</th>
+                    <th>Detalle</th>
+                    <th>cantidad</th>
+                    <th>Precio Unitario</th>
+                    <th>Descuento</th>
+                    <th>Precio Total sin Inpuesto</th>
+                    <th>Inpuesto</th>
+                    <th>Porcentage IVA</th>
+                    <th>Tarifa</th>
+                    <th>Base Imponible</th>
+                    <th>Valor</th>
+                    <th>Detalle Adicional Valor</th>
+                    <th>Detalle Adicional Nombre</th>
+                </thead>
+
+            </table>
+        </div>
+        <div class="my-3">
+            <label for="total_sin_ine">Sub Total sin Inpuesto</label>
+            <input class="" id="total_sin_in" name="total_sin_in" type="text" readonly="readonly">
+        </div>
+        <div class="my-3">
+            <label for="descuento_total">Total Descuentos</label>
+            <input class="" id="descuento_total" name="descuento_total" type="text" readonly="readonly">
+        </div>
+
+        <div class="my-3-p-7">
+            <div class="form-floating">
+                <select class="form-select" id="codigo_total_impuesto" name="codigo_total_impuesto"
+                    aria-label="Floating label select example">
+                    <option value="2" selected>IVA</option>
+                    <option value="3">ICE</option>
+                    <option value="5">IRBPNR</option>
+                </select>
+                <label for="floatingSelect">Impuesto</label>
+            </div>
+        </div>
+        <div class="my-3-p-7">
+            <div class="form-floating">
+                <select class="form-select" id="porcentaje_total_impuesto" name="porcentaje_total_impuesto"
+                    aria-label="Floating label select example">
+                    <option value="0">0%</option>
+                    <option value="2" selected>12%</option>
+                    <option value="3">14%</option>
+                    <option value="6">No Objeto de Impuesto</option>
+                    <option value="7">Exento de IVA </option>
+                </select>
+                <label for="floatingSelect">Porsentaje</label>
+            </div>
+        </div>
+        <div class="my-3">
+            <label for="baseinponible_total">Base Imponible</label>
+            <input class="" id="baseinponible_total" name="baseinponible_total" type="text" readonly="readonly">
+        </div>
+                <div class="my-3">
+            <label for="tarifaimponible_total">Tarifa</label>
+            <input class="" id="tarifaimponible_total" name="tarifaimponible_total" type="text" readonly="readonly">
+        </div>
+        <div class="my-3">
+            <label for="valorimponible_total">Vaor Imponible Total</label>
+            <input class="" id="valorimponible_total" name="valorimponible_total" type="text" readonly="readonly">
+        </div>
+        <div class="my-3">
+            <label for="total_propina">Propina</label>
+            <input class="" id="total_propina" name="total_propina" type="text" value="0.00" readonly="readonly">
+        </div>
+        <div class="my-3">
+            <label for="total_importe">Importe Total</label>
+            <input class="" id="total_importe" name="total_importe" type="text" readonly="readonly">
+        </div>
+        {{!-- --}}
+        <label for="correo_cliente">Forma de Pago</label>
+        <div class="my-3-p-7">
+            <div class="form-floating">
+                <select class="form-select" id="fotmade_pago" name="fotmade_pago"
+                    aria-label="Floating label select example">
+                    <option value="01" selected>SIN UTILIZACION DEL SISTEMA FINANCIERO</option>
+                    <option value="15">COMPENSACIÓN DE DEUDAS</option>
+                    <option value="16">TARJETA DE DÉBITO</option>
+                    <option value="17">DINERO ELECTRÓNICO </option>
+                    <option value="18">TARJETA PREPAGO</option>
+                    <option value="19">TARJETA DE CRÉDITO</option>
+                    <option value="20">OTROS CON UTILIZACION DEL SISTEMA FINANCIERO</option>
+                    <option value="21">ENDOSO DE TÍTULOS</option>
+                </select>
+                <label for="floatingSelect">Forma de pago</label>
+            </div>
+        </div>
+        <div class="my-3">
+            <label for="total_pago">Total</label>
+            <input class="" id="total_pago" name="total_pago" type="number" step=".01">
+        </div>
+        <div class="my-3-p-7">
+            <div class="form-floating">
+                <select class="form-select" id="tiempo_pago" name="tiempo_pago"
+                    aria-label="Floating label select example">
+                    <option value="" selected>Ninguno</option>
+                    <option value="Dias">Dias</option>
+                    <option value="Meses">Meses</option>
+                    <option value="Años">Años</option>
+
+                </select>
+                <label for="floatingSelect">Tiempo</label>
+            </div>
+        </div>
+        <div class="my-3">
+            <label for="plazo_pago">Plazo</label>
+            <input class="" id="plazo_pago" name="plazo_pago" type="number" value="0" readonly="readonly">
+        </div>
+        <div class="text-end">`
+            <button class="btn btn-primary">Ingresar</button>
+        </div>
+    </form>
+</div>
+
+
+{{!-- </div> --}}
+<script src="js/clavedeacceso.js"></script>
+<script src="js/buscador.js"></script>
+<script src="js/buscadort.js"></script>
+<script>
+
+</script>

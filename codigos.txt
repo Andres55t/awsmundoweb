@@ -1,0 +1,14 @@
+npm init -y
+npm i express
+npm i express-handlebars
+npm i mysql
+npm i morgan
+npm i moment
+npm i passport-local
+npm i passport
+npm i express-session
+npm i express-mysql-session
+npm install  nodemon  -D
+
+cd src
+ mkdir controllers models views routes public helpers

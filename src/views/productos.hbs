@@ -1,0 +1,84 @@
+<h4>Registro de productos</h4>
+<div class="row">
+    <div class="col-md-6">
+        <form action="/store-producto" method="post">
+
+            <div class="my-3">
+                <label for="codigo_principals">Codigo Principal</label>
+                <input class="form-control" name="codigo_principal" type="text" placeholder="Codigo Principal"
+                    autofocus>
+            </div>
+            <div class="my-3">
+                <label for="codigo_auxiliars">codigo Auxiliar</label>
+                <input class="form-control" name="codigo_auxiliar" type="text" placeholder="codigo auxiliar">
+            </div>
+            <div class="my-3">
+                <label for="descripcion">Descripcion</label>
+                <input class="form-control" name="descripcion" type="text" placeholder="Descripcion">
+            </div>
+            <div class="my-3">
+                <label for="precio_unitario">Precio Unitario</label>
+                <input class="form-control" name="precio_unitario" type="text" placeholder="Precio Unitario">
+            </div>
+            <div class="my-3-p-7">
+                <div class="my-3-p-7">
+                    <div class="form-floating">
+                        <select class="form-select" id="codigo_impuesto" name="codigo_impuesto"
+                            aria-label="Floating label select example">
+                            <option value="2" selected>IVA</option>
+                            <option value="3">ICE</option>
+                            <option value="5">IRBPNR</option>
+                        </select>
+                        <label for="floatingSelect">Impuesto</label>
+                    </div>
+                </div>
+                <div class="form-floating">
+                    <select class="form-select" id="codigo_porcentaje" name="codigo_porcentaje"
+                        aria-label="Floating label select example">
+                        <option value="0">0%</option>
+                        <option value="2" selected>12%</option>
+                        <option value="3">14%</option>
+                        <option value="6">No Objeto de Impuesto</option>
+                        <option value="7">Exento de IVA </option>
+                    </select>
+                    <label for="floatingSelect">Porsentaje</label>
+                </div>
+            </div>
+            <label for="precio_unitario">Detalle Adicional</label>
+            <div class="my-3">
+                <label for="detalleadicional_valor">Valor</label>
+                <input class="form-control" name="detalleadicional_valor" type="text" placeholder="Valor">
+            </div>
+            <div class="my-3">
+                <label for="detalleadicional_nombre">Nombre</label>
+                <input class="form-control" name="detalleadicional_nombre" type="text" placeholder="Nombre">
+            </div>
+            <div class="text-end">
+                <button class="btn btn-primary">Ingresar</button>
+            </div>
+
+        </form>
+    </div>
+
+
+    <div class="col-md-6">
+        <div class="table-responsive">
+            <table class="table table-stripe table-hover">
+                <thead>
+                    <th>Codigo Principal</th>
+                    <th>Codigo Auxiliar</th>
+                    <th>Detalle</th>
+                    <th>Precio Unitario</th>
+                </thead>
+                {{#each producto}}
+                <tr>
+                    <td>{{this.codigo_principal}}</td>
+                    <td>{{this.codigo_auxiliar}}</td>
+                    <td>{{this.descripcion}}</td>
+                    <td>{{this.precio_unitario}}</td>
+                </tr>
+                {{/each }}
+            </table>
+        </div>
+    </div>
+</div>

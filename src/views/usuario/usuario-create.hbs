@@ -1,0 +1,74 @@
+<div class="row mt-4">
+    <div class="col-md-6 offset-md-3">
+        <div class="card">
+            <div class="card-header ">
+                <h3>Registrar Usuario</h3>
+            </div>
+            <div class="card-body ">
+                <form action="/store-usuario" method="post">
+                    <div class="my-3">
+                        <label for="user_users">Nombre de Usuario</label>
+                        <input class="form-control" id="user_users" name="user_users" type="text"
+                            placeholder="Nombre de usuario">
+                    </div>
+                    <div class="my-3">
+                        <label for="name_users">Nombres</label>
+                        <input class="form-control" id="name_users" name="name_users" type="text" placeholder="Nombres">
+                    </div>
+                    <div class="my-3">
+                        <label for="pass_users">Contraseña</label>
+                        <input class="form-control" name="pass_users" type="password" placeholder="contraseña">
+                    </div>
+                    <div class="my-3">
+                        <label for="razonSocial">Razon Social</label>
+                        <input class="form-control" id="razonSocial" name="razonSocial" type="text"
+                            placeholder="Razon Social">
+                    </div>
+                    <div class="my-3">
+                        <label for="nombreComercial">Nombre Comercial</label>
+                        <input class="form-control" id="nombreComercial" name="nombreComercial" type="text"
+                            placeholder="Nombre Comercial">
+                    </div>
+                    <div class="my-3">
+                        <label for="ruc">RUC</label>
+                        <input class="form-control" id="ruc" name="ruc" type="text" placeholder="RUC">
+                    </div>
+                    <div class="my-3">
+                        <label for="dirMatriz">Direccion Matriz</label>
+                        <input class="form-control" id="dirMatriz" name="dirMatriz" type="text"
+                            placeholder="Direccion Matriz">
+                    </div>
+                    <div class="my-3-p-7">
+                        <div class="form-floating">
+                            <select class="form-select" id="obligadocontabilidad" name="obligadocontabilidad"
+                                aria-label="Floating label select example">
+                                <option value="NO" selected>NO</option>
+                                <option value="SI">SI</option>
+
+
+                            </select>
+                            <label for="floatingSelect">Obligado a llevar contabilidad</label>
+                        </div>
+                    </div>
+                    <label><input type="checkbox" id="cboxcdm" value="first_checkbox">Contribuyente designado
+                        Microempresa</label><br>
+                    <div class="my-3">
+                        <input class="form-control" id="microempresas_users" name="microempresas_users" type="text"
+                            value="CONTRIBUYENTE RÉGIMEN MICROEMPRESAS"
+                            placeholder="Contribuyente designado Microempresa" disabled="disabled"
+                            style="visibility:hidden">
+                    </div>
+                    <label><input type="checkbox" id="cboxagdr" value="first_checkbox">Agente de Retención</label><br>
+                    <div class="my-3">
+                        <input class="form-control" id="agenteretencion_users" name="agenteretencion_users" type="text"
+                            value="1" placeholder="Agente de Retención" disabled="disabled" style="visibility:hidden">
+                    </div>
+                    <div class="text-end">
+                        <input class="btn btn-primary" type="submit" value="INGRESAR">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="js/usuariocrear.js"></script>

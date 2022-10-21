@@ -1,0 +1,26 @@
+<form action="/store-enviarsri" method="post">
+    <div class="col-md-6">
+        <div class="table-responsive">
+            <table class="table table-stripe table-hover">
+                <thead>
+                    <th>Firmados</th>
+
+                </thead>
+                {{#each firmados}}
+                <tr>
+                    <td>{{this.archivo}}</td>
+
+                </tr>
+                {{/each }}
+            </table>
+        </div>
+    </div>
+
+
+    <label for="factura_enviarsri">Enviar SRI</label>
+    <input class="" id="factura_enviarsri" name="factura_enviarsri" type="text">
+    <div class="text-end">`
+        <button class="btn btn-primary">Ingresar</button>
+    </div>
+</form>
+

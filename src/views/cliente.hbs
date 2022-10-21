@@ -1,0 +1,84 @@
+<h4>Registro de Clientes</h4>
+<div class="row">
+    <div class="col-md-6">
+        <form action="/store-cliente" method="post">
+
+            <div class="my-3">
+                <label for="codigo_principals">Nombres del Cliente</label>
+                <input class="form-control" name="nombresrs_cliente" type="text" placeholder="Codigo Principal"
+                    autofocus>
+            </div>
+            <div class="my-3-p-7">
+                <div class="form-floating">
+                    <select class="form-select" id="tipo_cliente" name="tipo_cliente"
+                        aria-label="Floating label select example">
+                        <option value="1" selected>Cliente</option>
+                        <option value="2">Sugeto Retenido</option>
+                        <option value="2">Destinatario</option>
+                    </select>
+                    <label for="floatingSelect">Tipo Cliente</label>
+                </div>
+            </div>
+            <div class="my-3-p-7">
+                <div class="form-floating">
+                    <select class="form-select" id="tipoidentificacion_cliente" name="tipoidentificacion_cliente"
+                        aria-label="Floating label select example">
+                        <option value="05" selected>Cedula</option>
+                        <option value="04">Ruc</option>
+                        <option value="06">Pasaporte</option>
+                        <option value="08">Identificacion del Exterior</option>
+                    </select>
+                    <label for="floatingSelect">Tipo de Identificacion</label>
+                </div>
+            </div>
+            <div class="my-3">
+                <label for="identificacion_cliente">Identificacion</label>
+                <input class="form-control" id="identificacion_cliente" name="identificacion_cliente" type="text" placeholder="Descripcion">
+            </div>
+            <div class="my-3">
+                <label for="direccion_cliente">Direcion</label>
+                <input class="form-control" id="direccion_cliente" name="direccion_cliente" type="text" placeholder="Precio Unitario">
+            </div>
+                        <div class="my-3">
+                <label for="correo_cliente">Correo Electronico</label>
+                <input class="form-control" id="correo_cliente" name="correo_cliente" type="text" placeholder="Precio Unitario">
+            </div>
+                        <div class="my-3">
+                <label for="telefono_cliente">Telefono</label>
+                <input class="form-control" id="telefono_cliente" name="telefono_cliente" type="text" placeholder="Precio Unitario">
+            </div>
+
+            <div class="text-end">
+                <button class="btn btn-primary">Ingresar</button>
+            </div>
+
+        </form>
+    </div>
+
+
+    <div class="col-md-6">
+        <div class="table-responsive">
+            <table class="table table-stripe table-hover">
+                <thead>
+                    <th>Nombres</th>
+                    <th>Tipo de Identificacion</th>
+                    <th>Identificacion</th>
+                    <th>Correo</th>
+                    <th>Telefono</th>
+                    <th>Direccion</th>
+                </thead>
+                {{#each cliente}}
+                <tr>                    
+                    <td>{{this.nombresrs_cliente}}</td>
+                    <td>{{this.nombr_tidentificacion}}</td>
+                    <td>{{this.identificacion_cliente}}</td>
+                    <td>{{this.correo_cliente}}</td>
+                    <td>{{this.telefono_cliente}}</td>
+                    <td>{{this.direccion_cliente}}</td>
+                    
+                </tr>
+                {{/each }}
+            </table>
+        </div>
+    </div>
+</div>
