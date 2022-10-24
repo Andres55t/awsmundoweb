@@ -35,5 +35,30 @@ Usuario.create = async (data) => {
         console.error(e)
     }
 }
+
+Usuario.clveac = async (data) => {
+    try {
+        data.claveacccol=btoa(data.claveacccol)
+        data.claveacccol1=btoa(data.claveacccol1)
+        
+        const insertar = await db.query('insert into claveacc set ?',[data]);
+        if(insertar==='error'){
+            console.log('ERROR');
+        }else{
+            return insertar;
+        }
+    } catch (e) {
+        console.error(e)
+    }
+}
+
+Usuario.getclveac = async () => {
+
+    const clva = await db.query('SELECT * FROM claveacc');
+    
+    console.log(clva)
+    return clva;
+}
+
 module.exports = Usuario
 ;

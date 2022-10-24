@@ -1,5 +1,8 @@
 const Factura = {};
 db = require("../db");
+var convert = require('xml-js');
+const { DOMParser, XMLSerializer } = require('@xmldom/xmldom')
+db = require("../db");
 const moment = require('moment');
 let date_ob = new Date();
 let month = ("0" + (date_ob.getMonth() + 1)).slice(-2);
@@ -88,12 +91,15 @@ Factura.claveacceso = (datos) => {
 // }
 
 Factura.create = async (dataa) => {
-  console.log(fechaor(dataa.issuedAt));
-
+ //console.log(fechaor(dataa.issuedAt));
+ const clva = await db.query('SELECT * FROM claveacc');
+ let accessKeyId=atob(clva[0].claveacccol);
+ let secretAccessKey=atob(clva[0].claveacccol1);
   var axios = require('axios');
-  var data = JSON.stringify({
-    "accessKeyId": process.env.AWS_accessKeyId,
-    "secretAccessKey": process.env.AWS_secretAccessKey,
+
+  params = {
+    "accessKeyId": accessKeyId,
+    "secretAccessKey": secretAccessKey+clva[0].claveacccol2,
     "ambiente": dataa.environmentType,
     "tipoEmision": dataa.emissionType,
     "razonSocial": dataa.razonsocial,
@@ -135,26 +141,19 @@ Factura.create = async (dataa) => {
       "Email": dataa.correo_cliente
     }
 
-  });
+  }
 
-  var config = {
-    method: 'post',
-    url: 'http://3.132.149.137/api/factura',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    data: data
-  };
+  let res = await axios.post('http://3.132.149.137/api/factura', params);
+  //const doc = new DOMParser().parseFromString(res.toString(), 'text/xml')
 
-  axios(config)
-    .then(function (response) {
-      console.log(JSON.stringify(response.data));
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
+  var result1 = convert.xml2json(res.data, { compact: true, spaces: 4 });
+  //var result2 = convert.xml2json(res.data, { compact: false, spaces: 4 });
+  resultado=JSON.parse(result1)
+  resultado.xml=res.data;
+  resultado.alert=true;
+  //console.log(result1);
 
-  return dataa
+  return resultado
 }
 
 function jsonproductos(dataa) {
@@ -199,7 +198,7 @@ if(dataa.codigo_p[0].length > 1 && dataa.codigo_s[0].length >1 && dataa.detalle_
   })
 }
 
-  console.log(data)
+ // console.log(data)
   return data
 }
 function fechaor(fecha) {

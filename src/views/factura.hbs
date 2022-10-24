@@ -26,6 +26,7 @@
                         value="{{usuario.obligadocontabilidad}}" readonly="readonly">
                 </div>
                 {{#if usuario.agenteretencion_users}}
+
                 <div class="my-3-p-7">
                     <label for="codigo_principals"> Agente de Retención: </label>
                     <input type="text" id="fac_agenterete" name="fac_agenterete"
@@ -41,11 +42,13 @@
                 {{/if}}
                 <div class="my-4-p-3">
                     <label for="codigo_principals">RUC:</label>
-                    <input type="text" id="RUCNumber" name="RUCNumber" value="{{claveacc.RUCNumber}}" readonly="readonly">
+                    <input type="text" id="RUCNumber" name="RUCNumber" value="{{claveacc.RUCNumber}}"
+                        readonly="readonly">
                 </div>
                 <div class="my-3-p-7">
                     <label for="codigo_principals">Access Key:</label>
-                    <input type="text" id="AccessKey" name="AccessKey" value="{{claveacc.AccessKey}}" readonly="readonly">
+                    <input type="text" id="AccessKey" name="AccessKey" value="{{claveacc.AccessKey}}"
+                        readonly="readonly">
                 </div>
                 <div class="my-3-p-7">
                     <label for="codigo_principals">Fecha:</label>
@@ -285,7 +288,7 @@
             <label for="baseinponible_total">Base Imponible</label>
             <input class="" id="baseinponible_total" name="baseinponible_total" type="text" readonly="readonly">
         </div>
-                <div class="my-3">
+        <div class="my-3">
             <label for="tarifaimponible_total">Tarifa</label>
             <input class="" id="tarifaimponible_total" name="tarifaimponible_total" type="text" readonly="readonly">
         </div>
@@ -340,14 +343,38 @@
             <label for="plazo_pago">Plazo</label>
             <input class="" id="plazo_pago" name="plazo_pago" type="number" value="0" readonly="readonly">
         </div>
-        <div class="text-end">`
+        <div class="text-end">
             <button class="btn btn-primary">Ingresar</button>
         </div>
     </form>
 </div>
 
 
-{{!-- </div> --}}
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+{{#if facturacreate.alert}}
+<script>
+    Swal.fire({
+        html: {{> search}},
+        grow: 'fullscreen',
+          })
+</script>
+
+
+
+<script  src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.js"></script>
+<script defer>
+   const contenedorQR = document.getElementById('contenedorQR');
+
+   const QR = new QRCode(contenedorQR,{
+   
+    width:100,
+    height:100
+   });
+
+
+    QR.makeCode('Clave de Acceso: {{facturacreate.factura.infoTributaria.claveAcceso._text}}');</script>
+{{/if}}
+
 <script src="js/clavedeacceso.js"></script>
 <script src="js/buscador.js"></script>
 <script src="js/buscadort.js"></script>

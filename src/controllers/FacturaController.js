@@ -18,11 +18,13 @@ FacturaController.index = async (req, res) => {
     
     // console.log(req.body);
     const facturacreate=await Factura.create(req.body);
+    console.log(facturacreate.factura)
 const claveacc=await Factura.claveacceso(req.user);
 const producto=await Producto.get(req.user.id_users)
 const sucursal=await Sucursal.get(req.user.id_users)
+
 //console.log(facturacreate);
-res.render('factura', { claveacc: claveacc,producto:producto,sucursal: sucursal })
+res.render('factura', { claveacc: claveacc,producto:producto,sucursal: sucursal,facturacreate:facturacreate })
 
   
 }

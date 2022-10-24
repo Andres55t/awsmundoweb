@@ -86,3 +86,7 @@ function generateAccessKey(issuedAt, voucherType, RUCNumber, environmentType, ra
     return accessKeyWithCheckDigit;
 }
 
+(function() {
+    const myModal = document.getElementById('myModal')
+    
+}());

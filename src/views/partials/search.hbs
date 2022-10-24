@@ -1,10 +1,111 @@
+`
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 
-<form action="/clientesb" method="post">
-    <div class="my-2">
-        <label for="usuario_comentarios">nombre</label>
-        <input type="text" id="usuario_comentarios" name="usuario_comentarios" class="form-control">
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="fa  ">
+            <h1>Factura N° &nbsp;<span>{{facturacreate.factura.infoTributaria.secuencial._text}}</span></h1>
+            <h5>Autorizacion: &nbsp;<span>{{pauto}}</span></h5>
+            <h5>Fecha Autorizacion: &nbsp;<span>{{fauto}}</span></h5>
+            <h5>Ambiente: &nbsp;<span>{{facturacreate.factura.infoTributaria.ambiente._text}}</span></h5>
+            <h5>Emision: &nbsp;<span>{{facturacreate.factura.infoTributaria.tipoEmision._text}}</span></h5>
+        </div>
+
+        <div class="col-xs-2">
+            <div id="contenedorQR" class="contenedorQR"></div>
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="fa col-xs-8">
+            <h5><strong>Matriz: &nbsp;<span>{{facturacreate.factura.infoTributaria.dirMatriz._text}}</span></strong></h5>
+            <h5><strong>Teléfono: &nbsp;<span>{{tel}}</span></strong></h5>
+            <h5><strong>E-mail: &nbsp;<span>{{mail}}</span></strong></h5>
+            <h5><strong>Nombre: &nbsp;<span>{{nombre}}</span></strong></h5>
+        </div>
+
+        <div class="col-xs-4">
+            <h5><strong>RUC: &nbsp;<span>{{facturacreate.factura.infoTributaria.ruc._text}}</span></strong></h5>
+            <h5><strong>Contribuyente régimen RIMPE: &nbsp;<span>{{rimpe}}</span></strong></h5>
+            <h5><strong>Agente de Retencion: &nbsp;<span>{{agente}}</span></strong></h5>
+            <h5><strong>Res. No.: &nbsp;<span>{{resolucion}}</span></strong></h5>
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-xs-8">
+            <h5>Fecha: &nbsp;<span>{{facturacreate.factura.infoFactura.fechaEmision._text}}</span></h5>
+            <h5>Cliente: &nbsp;<span>{{facturacreate.factura.infoFactura.razonSocialComprador._text}}</span></h5>
+            <h5>Direccion: &nbsp;<span>{{direccion}}</span></h5>
+            <h5>RUC/CI: &nbsp;<span>{{facturacreate.factura.infoFactura.identificacionComprador._text}}</span></h5>
+        </div>
+        <div class="col-xs-4">
+            <h5>Teléfono: &nbsp;<span>{{telefono}}</span></h5>
+            <h5>E-mail: &nbsp;<span>{{email}}</span></h5>
+            <h5>Ord. de compra: &nbsp;<span>{{compra}}</span></h5>
+            <h5>Código: &nbsp;<span>{{codigo}}</span></h5>
+            <br>
+        </div>
+    </div>
+    <hr>
+    <div class="row text-center" style="margin-bottom: 2rem;">
+        <div class="col-xs-6">
+            <h1 class="h2">Cliente</h1>
+            <strong>{{facturacreate.factura.infoFactura.razonSocialComprador._text}}</strong>
+        </div>
+        <div class="col-xs-6">
+            <h1 class="h2">Remitente</h1>
+            <strong>{{facturacreate.factura.infoTributaria.razonSocial._text}}</strong>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <table class="table table-condensed table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th>Descripción</th>
+                        <th>Cantidad</th>
+                        <th>Precio unitario</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{tablaProductos}}
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="3" class="text-right">Subtotal</td>
+                        <td>{{subtotal}}</td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" class="text-right">Descuento</td>
+                        <td>{{descuento}}</td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" class="text-right">Subtotal con descuento</td>
+                        <td>{{subtotalConDescuento}}</td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" class="text-right">Impuestos</td>
+                        <td>{{impuestos}}</td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" class="text-right">
+                            <h4>Total</h4>
+                        </td>
+                        <td>
+                            <h4>{{total}}</h4>
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
     </div>
 
-    <div class="text-end">
-        <button class="btn btn-primary">comenta</button>
+    <div class="row">
+        <div class="col-xs-12 text-center">
+            <p class="h5">Gracias por su compra</p>
+        </div>
     </div>
+</div>`

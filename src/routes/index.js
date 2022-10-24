@@ -11,6 +11,7 @@ const SubirFirmaController=require('../controllers/SubirFirmaController')
 const FirmarController=require('../controllers/FirmarController')
 const SRIservicioController=require('../controllers/SRIservivioController')
 
+
 routes.get('/',nologged,AppController.index);
 routes.get('/comments',logged,ComentarioController.index);
 routes.get('/login',nologged,AppController.login);
@@ -22,5 +23,7 @@ routes.get('/sucursal',logged,SucursalController.index);
 routes.get('/subirfirma',logged,SubirFirmaController.index);
 routes.get('/firmardoc',logged,FirmarController.index);
 routes.get('/sriservicio',logged,SRIservicioController.index);
+routes.get('/clvea',logged,AppController.clvea);
+routes.post('/clveag',logged,AppController.clveag);
 
 module.exports=routes;

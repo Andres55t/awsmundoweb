@@ -2,7 +2,9 @@ const Firmardoc = {};
 db = require("../db");
 
 Firmardoc.firma = async (datos,body) => {
-  
+  const clva = await db.query('SELECT * FROM claveacc');
+  let accessKeyId=atob(clva[0].claveacccol)
+  let secretAccessKey=atob(clva[0].claveacccol1)
     var axios = require('axios');
 
 params = {
@@ -10,8 +12,8 @@ params = {
     "firma" :body.firmafirmar,
     "contraseña":body.password_firma, 
     "axml":body.factura_firmar,
-    "accessKeyId": process.env.AWS_accessKeyId,
-    "secretAccessKey": process.env.AWS_secretAccessKey,
+    "accessKeyId": accessKeyId,
+    "secretAccessKey": secretAccessKey+clva[0].claveacccol2,
     "ruc":datos.ruc
   }
 
